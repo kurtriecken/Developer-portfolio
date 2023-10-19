@@ -25,12 +25,18 @@
 
 @keyframes vibrate {
     0% {
+        transform: scaleX(1);
         transform: scaleY(1);
+
     }
     50% {
+        transform: scaleX(1.5);
         transform: scaleY(1.5);
+
     }
     100% {
+        transform: scaleX(1);
         transform: scaleY(1);
+
     }
 }

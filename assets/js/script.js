@@ -38,5 +38,5 @@ function pluckString(event) {
     }
     setTimeout(() => {
         string.style.animation = '';
-    }, 200);
+    }, 300);
 }
