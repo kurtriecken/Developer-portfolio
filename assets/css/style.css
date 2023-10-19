@@ -1,0 +1,31 @@
+#double_bass {
+    width: 300px;
+    height: 600px;
+    background-color: brown;
+    position: relative;
+}
+
+.string {
+    width: 3px;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+}
+
+#string1 { left: 50px; }
+#string2 { left: 100px; }
+#string3 { left: 150px; }
+#string4 { left: 200px; }
+
+@keyframes vibrate {
+    0% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(1.5);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
