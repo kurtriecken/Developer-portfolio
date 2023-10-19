@@ -6,8 +6,33 @@
     margin: auto;
     width: 300px;
     height: 600px;
-    background-color: brown;
+    /* background: linear-gradient(45deg, #8B4513 25%, #D2691E 25%, 
+    #D2691E 50%, #8B4513 50%, #8B4513 75%, #D2691E 75%, #D2691E); */
+    background: radial-gradient(
+        circle,
+        #8B4513 5%,
+        transparent 10%,
+        #D2691E 15%,
+        transparent 20%,
+        #8B4513 25%,
+        transparent 30%,
+        #D2691E 35%,
+        transparent 40%,
+        #8B4513 45%,
+        transparent 50%,
+        #D2691E 55%,
+        transparent 60%,
+        #8B4513 65%,
+        transparent 70%,
+        #D2691E 75%,
+        transparent 80%,
+        #8B4513 85%,
+        transparent 90%,
+        #D2691E 95%
+    );
     position: relative;
+    border-radius: 10px;
+    /* transform: rotate(20deg); */
 }
 
 .string {
@@ -18,25 +43,53 @@
     top: 0;
 }
 
-#string1 { left: 50px; }
-#string2 { left: 100px; }
-#string3 { left: 150px; }
-#string4 { left: 200px; }
+#string1 { left: 70px; }
+#string2 { left: 122px; }
+#string3 { left: 172px; }
+#string4 { left: 225px; }
+
+#double_bass::before,
+#double_bass::after {
+    content: '';
+    width: 60px;
+    height: 120px;
+    background-color: #F5DEB3;
+    position: absolute;
+    z-index: 2;
+    clip-path: polygon(30% 10%, 70% 10%, 70% 90%, 30% 90%, 50% 60%);
+}
+
+#double_bass::before {
+    left: 5px;
+    top: 250px;
+    border-radius: 50%;
+    /* transform: rotate(45deg); */
+    /* clip-path: polygon(0% 100%, 15% 100%, 15% 70%, 50% 30%, 85% 70%, 85% 100%, 100% 100%, 100% 0%, 0% 0%); */
+    clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 50%, 60% 50%, 60% 100%);
+}
+
+#double_bass::after {
+    left: 235px;
+    top: 250px;
+    border-radius: 50%;
+    /* transform: rotate(-45deg); */
+    clip-path: polygon(0% 0%, 0% 100%, 100% 100%, 100% 70%, 50% 70%, 50% 0%);
+}
 
 @keyframes vibrate {
     0% {
-        transform: scaleX(1);
-        transform: scaleY(1);
-
+        transform: scaleY(1) translateX(0);
+    }
+    25% {
+        transform: scaleY(1.5) translateX(-2px);
     }
     50% {
-        transform: scaleX(1.5);
-        transform: scaleY(1.5);
-
+        transform: scaleY(1) translateX(0);
+    }
+    75% {
+        transform: scaleY(1.5) translateX(2px);
     }
     100% {
-        transform: scaleX(1);
-        transform: scaleY(1);
-
+        transform: scaleY(1) translateX(0);
     }
 }
